@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; 
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff; 
+        }
+        .registration-container {
+            background-color: #1c1c1c; 
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            width: 350px;
+            box-sizing: border-box;
+        }
+        .registration-container h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #fff;
+        }
+        .registration-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ddd; 
+        }
+        .registration-container input[type="text"],
+        .registration-container input[type="email"],
+        .registration-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #333; 
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #333; 
+            color: #fff; 
+            box-sizing: border-box;
+        }
+        .registration-container input[type="text"]::placeholder,
+        .registration-container input[type="email"]::placeholder,
+        .registration-container input[type="password"]::placeholder {
+            color: #bbb; 
+        }
+        .registration-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .registration-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-container">
+    <h1>Registration</h1>
+    <form id="registrationForm">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        
+        <input type="submit" value="Register">
+
+        <p>Already Registered ? <a href="log.html">Login</a></p>
+    </form>
+</div>
+
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        var username = document.getElementById('username').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        if (localStorage.getItem('user_' + username) || localStorage.getItem('email_' + email)) {
+            alert('Username or Email already exists!');
+            return;
+        }
+
+        localStorage.setItem('user_' + username, password);
+        localStorage.setItem('email_' + email, username);
+
+        alert('Registration successful!');
+        window.location.href="log.html";
+
+        document.getElementById('registrationForm').reset();
+    });
+</script>
+
+</body>
+</html>

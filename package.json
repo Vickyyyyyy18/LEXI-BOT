@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@google/generative-ai": "^0.16.0",
+    "type": "module",
+    "main":"script.js"
+    
+
+    
+  }
+}
