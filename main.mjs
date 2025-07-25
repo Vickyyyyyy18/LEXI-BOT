@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyDS7tlmuGJ_UTHWcGFVHXILuHKiK8OzmRY");
+const genAI = new GoogleGenerativeAI("AIzaSyC23mNrEF8ybZrXcYNYA7Ibp9bsMtk57aA");
 
 async function run() {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
