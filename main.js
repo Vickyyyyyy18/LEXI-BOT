@@ -1,9 +1,10 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyCGX9idIFFrKbWj6p9FeWyN912KZJ6fQ4s");
+const genAI = new GoogleGenerativeAI("AIzaSyBk_uC5BXA8AGTRq6nQjRxIGDlKINBIq54");
 
 async function run() {
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
 
   const prompt = "what is the legal document?."
 

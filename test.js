@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "https://cdn.skypack.dev/@google/generative-ai";
 document.addEventListener('DOMContentLoaded', () => {
-    const genAI = new GoogleGenerativeAI("AIzaSyCGX9idIFFrKbWj6p9FeWyN912KZJ6fQ4s");
+    const genAI = new GoogleGenerativeAI("AIzaSyBk_uC5BXA8AGTRq6nQjRxIGDlKINBIq54");
 
     document.getElementById('generate-btn').addEventListener('click', async () => {
         const prompt = document.getElementById('prompt').value;
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ];
 
             const contentLowerCase = fileContent.toLowerCase();
-            const containsLegalTerms = legalTerms.every(legalTermsterm => contentLowerCase.includes(legalTermsterm));
+            const containsLegalTerms = legalTerms.every(term => contentLowerCase.includes(term));
 
             
         }
